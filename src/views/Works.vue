@@ -33,12 +33,47 @@
         </div>
       </div>
     </section>
+    
+    <!-- 视频区 -->
+    <section class="video-section">
+      <div class="video-content">
+        <div class="video-player">
+          <video 
+            :src="videoUrl" 
+            controls 
+            :poster="videoPoster" 
+            alt="作品视频"
+            @loadeddata="captureFirstFrame"
+          >
+            您的浏览器不支持视频播放
+          </video>
+        </div>
+        <div class="video-title-vertical">
+          <p>作品展示</p>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import NavBar from '../components/NavBar.vue'
+
+const videoUrl = new URL('../videos/Works.mp4', import.meta.url).href
+const videoPoster = ref('')
+
+const captureFirstFrame = () => {
+  const video = document.querySelector('.video-player video')
+  if (video && !videoPoster.value) {
+    const canvas = document.createElement('canvas')
+    canvas.width = video.videoWidth || 1200
+    canvas.height = video.videoHeight || 480
+    const ctx = canvas.getContext('2d')
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+    videoPoster.value = canvas.toDataURL('image/jpeg')
+  }
+}
 
 const works = ref([
   {
@@ -189,6 +224,59 @@ const works = ref([
 
 .detail-link:hover {
   color: #5D4037;
+}
+
+/* 视频区 */
+.video-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+
+.video-content {
+  height: 480px;
+  padding: 40px;
+  background-color: #FFF8E1;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.video-player {
+  flex: 1;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-player video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  background-color: #000;
+}
+
+.video-title-vertical {
+  width: 200px;
+  height: 240px;
+  padding: 24px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-title-vertical p {
+  font-size: 28px;
+  color: #5D4037;
+  font-weight: bold;
+  line-height: 48px;
 }
 
 </style>

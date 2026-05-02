@@ -90,7 +90,7 @@ const steps = ref([
   { 
     title: '黄草劈丝', 
     image: 'src/imgs/Grass/Grass-4.jpg',
-    description: '将染好色的草条进一步劈分成更细的草丝，用于编织细腻的纹理或复杂花纹。'
+    description: '将浸泡好的草条进一步劈分成更细的草丝，用于编织细腻的纹理或复杂花纹。'
   },
   { 
     title: '黄草染色', 
