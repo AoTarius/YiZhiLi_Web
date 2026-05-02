@@ -7,7 +7,7 @@
       <div class="hero-content">
         <div class="hero-left-text">
           <h1 class="hero-title">徐行草编</h1>
-          <p class="hero-subtitle">Xuxing Grass Weaving</p>
+          <p class="hero-subtitle">Xuhang Grass Weaving</p>
           <p class="hero-desc">寻平和之美 纵横交叠间 于自然之源</p>
         </div>
         <div class="hero-right-text">
@@ -148,7 +148,7 @@ const cards = ref([
 /* 顶部横幅 */
 .hero-banner {
   height: 560px;
-  background-image: url('https://picsum.photos/1200/560?random=hero');
+  background-image: url('src/imgs/Home/BackGround.jpg');
   background-size: cover;
   background-position: center;
   position: relative;

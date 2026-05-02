@@ -78,11 +78,11 @@ const inheritors = ref([
   },
   {
     name: '王勤',
-    image: 'https://picsum.photos/600/320?random=inheritor3'
+    image: 'src/imgs/Inheritors/WangQin.jpg'
   },
   {
     name: '陈姣',
-    image: 'https://picsum.photos/600/320?random=inheritor4'
+    image: 'src/imgs/Inheritors/ChenJiao.jpg'
   }
 ])
 </script>

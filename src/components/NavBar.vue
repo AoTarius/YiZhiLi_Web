@@ -38,6 +38,7 @@ const navItems = [
   { name: '作品欣赏', path: '/works' },
   { name: '学习体验', path: '/learn' },
   { name: '新闻动态', path: '/news' },
+  { name: '草编创意', path: '/creativity'}
 ]
 
 const isScrolled = ref(false)

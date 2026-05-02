@@ -6,6 +6,7 @@ import Inheritors from '../views/Inheritors.vue'
 import Works from '../views/Works.vue'
 import Learn from '../views/Learn.vue'
 import News from '../views/News.vue'
+import Creativity from '../views/Creativity.vue'
 
 const routes = [
   { path: '/', component: Home, meta: { activeIndex: 0 } },
@@ -15,6 +16,7 @@ const routes = [
   { path: '/works', component: Works, meta: { activeIndex: 4 } },
   { path: '/learn', component: Learn, meta: { activeIndex: 5 } },
   { path: '/news', component: News, meta: { activeIndex: 6 } },
+  { path: '/creativity', component: Creativity, meta: { activeIndex: 7 } }
 ]
 
 const router = createRouter({
