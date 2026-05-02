@@ -33,10 +33,10 @@ const props = defineProps({
 const navItems = [
   { name: '首页', path: '/' },
   { name: '历史渊源', path: '/history' },
-  { name: '技艺展示', path: '/craft' },
+  { name: '黄草工艺', path: '/grass' },
   { name: '传承人风采', path: '/inheritors' },
   { name: '作品欣赏', path: '/works' },
-  { name: '学习体验', path: '/learn' },
+  { name: '技艺展示', path: '/craft' },
   { name: '新闻动态', path: '/news' },
   { name: '草编创意', path: '/creativity'}
 ]

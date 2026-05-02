@@ -4,7 +4,7 @@
     
     <!-- 顶部横幅 -->
     <section class="hero-banner">
-      <img src="https://picsum.photos/1200/480?random=works-banner" alt="作品欣赏" />
+      <img src="../imgs/Works/Background.jpg" alt="作品欣赏" />
     </section>
     
     <!-- 作品欣赏标题 -->
@@ -28,40 +28,11 @@
           <div class="card-content">
             <h3 class="work-title">{{ work.title }}</h3>
             <p class="work-description">{{ work.description }}</p>
-            <a href="#" class="detail-link">了解详情>>></a>
+            <a :href="work.link" class="detail-link" :target="work.link.startsWith('http') ? '_blank' : '_self'" :rel="work.link.startsWith('http') ? 'noopener noreferrer' : ''">了解详情>>></a>
           </div>
         </div>
       </div>
     </section>
-    
-    <!-- 底部区域 -->
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-left">
-          <div class="footer-links">
-            <a href="#">相关链接</a>
-            <span class="divider">|</span>
-            <a href="#">网站地图</a>
-            <span class="divider">|</span>
-            <a href="#">隐私政策</a>
-            <span class="divider">|</span>
-            <a href="#">联系我们</a>
-            <span class="divider">|</span>
-            <a href="#">关于我们</a>
-            <span class="divider">|</span>
-            <a href="#">留言板</a>
-          </div>
-          <p class="contact-info">联系方式：bailey07@yeah.net</p>
-          <p class="browser-hint">建议使用360极速、Chrome、Firefox浏览器，最佳分辨率1920x1080</p>
-        </div>
-        <div class="footer-right">
-          <div class="qr-code">
-            <img src="https://picsum.photos/120/120?random=qr5" alt="二维码" />
-          </div>
-          <p class="xiaohongshu-id">小红书号：2674506360</p>
-        </div>
-      </div>
-    </footer>
   </div>
 </template>
 
@@ -71,24 +42,28 @@ import NavBar from '../components/NavBar.vue'
 
 const works = ref([
   {
-    title: '清代"囍"字草编系列',
-    description: '主要用于民间婚嫁场合，象征着喜事不断 婚姻美满和家庭的和谐。',
-    image: 'https://picsum.photos/600/320?random=work1'
+    title: '以黄草为线，指尖为梭编织独特的当午记忆',
+    description: 'chillmore且悠携手国家级非物质文化遗产上海嘉定徐行草编，以「绿洲」为灵感，将自然与匠心编织进端午时节。',
+    image: 'src/imgs/Works/Works-1.jpg',
+    link: 'https://weixin.qq.com/sph/AIcrKZXQZs'
   },
   {
     title: '野兽派与徐行草编联名系列',
     description: '2023端午，野兽派携手国家级非遗质文化遗产"徐行草编"，为您带来这父温暖而独持的限 定系列。',
-    image: 'https://picsum.photos/600/320?random=work2'
+    image: 'src/imgs/Works/Works-2.jpg',
+    link: 'https://mp.weixin.qq.com/s/WBWR0iI-ywW-pAntq87paw'
   },
   {
-    title: '艺术品——草编方形坐垫',
-    description: '一个草编的方形坐垫，因为没有收编，所以 耷拉下来的黄草覆盖了整个椅子。',
-    image: 'https://picsum.photos/600/320?random=work3'
+    title: '荷木HEMU丨非遗系列',
+    description: '钢筋森林里，藏着徐行草编的呼吸。非遗匠人捻转田野黄草，每道纹路都独一无二。荷木HEMU丨2026SS「揽蕙」系列作品上新。 ',
+    image: 'src/imgs/Works/Works-3.jpg',
+    link: 'https://weixin.qq.com/sph/ARAXEPY2Vu'
   },
   {
-    title: '艺术品——蒙德里安草编毯子',
-    description: '以几何图形为基本元素的草编毯子作品，这是 在致敬几何抽象画派先驱蒙德里安。',
-    image: 'https://picsum.photos/600/320?random=work4'
+    title: '庆祝建党百年',
+    description: '继草编“南湖红船”之后，上海徐行草编文化发展有限公司又有新作！',
+    image: 'src/imgs/Works/Works-4.jpg',
+    link: 'https://mp.weixin.qq.com/s/SUlV-l-KYYPHAMHNefuHWg'
   }
 ])
 </script>
@@ -216,82 +191,4 @@ const works = ref([
   color: #5D4037;
 }
 
-/* 底部区域 */
-.footer {
-  height: 120px;
-  background-color: #212121;
-  padding: 24px;
-  margin-top: 40px;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-left {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.footer-links {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.footer-links a {
-  color: #FAF8F5;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #8D6E63;
-}
-
-.divider {
-  color: #FAF8F5;
-}
-
-.contact-info {
-  color: #FAF8F5;
-  font-size: 14px;
-}
-
-.browser-hint {
-  color: #FAF8F5;
-  font-size: 14px;
-}
-
-.footer-right {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.qr-code {
-  width: 120px;
-  height: 120px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.qr-code img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.xiaohongshu-id {
-  color: #FAF8F5;
-  font-size: 14px;
-  margin-top: 8px;
-}
 </style>

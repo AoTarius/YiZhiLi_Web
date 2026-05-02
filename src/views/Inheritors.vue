@@ -30,36 +30,6 @@
         </div>
       </div>
     </section>
-    
-    <!-- 页脚 -->
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-left">
-          <div class="footer-links">
-            <a href="#">相关链接</a>
-            <span class="divider">|</span>
-            <a href="#">网站地图</a>
-            <span class="divider">|</span>
-            <a href="#">隐私政策</a>
-            <span class="divider">|</span>
-            <a href="#">联系我们</a>
-            <span class="divider">|</span>
-            <a href="#">关于我们</a>
-            <span class="divider">|</span>
-            <a href="#">留言板</a>
-          </div>
-          <p class="contact-info">联系方式：bailey07@yeah.net</p>
-          <p class="browser-hint">建议使用360极速、Chrome、Firefox浏览器，最佳分辨率1920x1080</p>
-        </div>
-        <div class="footer-right">
-          <div class="qr-code">
-            <img src="https://picsum.photos/100/100?random=qr4" alt="二维码" />
-          </div>
-          <div class="xiaohongshu-badge">小红书</div>
-          <p class="xiaohongshu-id">小红书号：2674506360</p>
-        </div>
-      </div>
-    </footer>
   </div>
 </template>
 
@@ -70,11 +40,11 @@ import NavBar from '../components/NavBar.vue'
 const inheritors = ref([
   {
     name: '计学成',
-    image: 'https://picsum.photos/600/320?random=inheritor1'
+    image: 'src/imgs/Inheritors/JiXueCheng.jpg'
   },
   {
     name: '李月琴',
-    image: 'https://picsum.photos/600/320?random=inheritor2'
+    image: 'src/imgs/Inheritors/LiYueQin.jpg'
   },
   {
     name: '王勤',
@@ -97,7 +67,7 @@ const inheritors = ref([
 /* 顶部横幅 */
 .hero-banner {
   height: 480px;
-  background-image: url('https://picsum.photos/1200/480?random=inheritors-banner');
+  background-image: url('src/imgs/Inheritors/Background.png');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -114,14 +84,14 @@ const inheritors = ref([
 
 .hero-title {
   font-size: 48px;
-  color: #5D4037;
+  color: #f4f2f1;
   font-weight: bold;
   margin-bottom: 16px;
 }
 
 .hero-subtitle {
   font-size: 20px;
-  color: #8D6E63;
+  color: #f4f2f1;
   letter-spacing: 4px;
 }
 
@@ -221,102 +191,4 @@ const inheritors = ref([
   color: #FAF8F5;
 }
 
-/* 页脚 */
-.footer {
-  height: 160px;
-  background-color: #212121;
-  padding: 24px;
-  margin-top: 40px;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.footer-left {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-links {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.footer-links a {
-  color: #BDBDBD;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #FFFFFF;
-}
-
-.divider {
-  color: #BDBDBD;
-}
-
-.contact-info {
-  color: #BDBDBD;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
-
-.browser-hint {
-  color: #BDBDBD;
-  font-size: 12px;
-}
-
-.footer-right {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.qr-code {
-  width: 100px;
-  height: 100px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.qr-code img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.xiaohongshu-badge {
-  width: 60px;
-  height: 24px;
-  background-color: #FF2442;
-  color: #FFFFFF;
-  font-size: 12px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 8px;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-.xiaohongshu-badge:hover {
-  opacity: 0.8;
-}
-
-.xiaohongshu-id {
-  color: #BDBDBD;
-  font-size: 14px;
-  margin-top: 8px;
-}
 </style>

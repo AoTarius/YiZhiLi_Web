@@ -4,7 +4,7 @@
     
     <!-- 顶部横幅 -->
     <section class="hero-banner">
-      <img src="https://picsum.photos/1200/480?random=news-banner" alt="草编制品特写" />
+      <img src="../imgs/News/Background.jpg" alt="草编制品特写" />
       <div class="banner-text">
         <h1 class="banner-title">徐行草编</h1>
         <p class="banner-subtitle">XU HANG CAO BIAN</p>
@@ -22,7 +22,7 @@
       <div class="news-container">
         <!-- 左侧图片 -->
         <div class="news-image">
-          <img src="https://picsum.photos/480/320?random=news-img" alt="新闻图片" />
+          <img src="../imgs/News/News-1.jpg" alt="新闻图片" />
         </div>
         
         <!-- 右侧新闻列表 -->
@@ -38,36 +38,6 @@
         </div>
       </div>
     </section>
-    
-    <!-- 页脚 -->
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-left">
-          <div class="footer-links">
-            <a href="#">相关链接</a>
-            <span class="divider">|</span>
-            <a href="#">网站地图</a>
-            <span class="divider">|</span>
-            <a href="#">隐私政策</a>
-            <span class="divider">|</span>
-            <a href="#">联系我们</a>
-            <span class="divider">|</span>
-            <a href="#">关于我们</a>
-            <span class="divider">|</span>
-            <a href="#">留言板</a>
-          </div>
-          <p class="contact-info">联系方式：bailey07@yeah.net</p>
-          <p class="browser-hint">建议使用360极速、Chrome、Firefox浏览器，最佳分辨率1920x1080</p>
-        </div>
-        <div class="footer-right">
-          <div class="qr-code">
-            <img src="https://picsum.photos/80/80?random=qr-news" alt="二维码" />
-          </div>
-          <p class="platform-name">小红书</p>
-          <p class="platform-id">2674506360</p>
-        </div>
-      </div>
-    </footer>
   </div>
 </template>
 
@@ -137,14 +107,14 @@ const newsList = ref([
 
 .banner-title {
   font-size: 48px;
-  color: #5D4037;
+  color: #f2e0db;
   font-weight: bold;
   margin-bottom: 16px;
 }
 
 .banner-subtitle {
   font-size: 20px;
-  color: #8D6E63;
+  color: #f1e3dd;
   letter-spacing: 4px;
 }
 
@@ -234,93 +204,6 @@ const newsList = ref([
   font-size: 14px;
   color: #8D6E63;
   text-align: right;
-}
-
-/* 页脚 */
-.footer {
-  height: 160px;
-  background-color: #000000;
-  padding: 24px;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-}
-
-.footer-left {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-links {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: #FAF8F5;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #8D6E63;
-}
-
-.divider {
-  color: #FAF8F5;
-  font-size: 14px;
-}
-
-.contact-info {
-  color: #FAF8F5;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
-
-.browser-hint {
-  color: #FAF8F5;
-  font-size: 12px;
-}
-
-.footer-right {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.qr-code {
-  width: 80px;
-  height: 80px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.qr-code img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.platform-name {
-  color: #FAF8F5;
-  font-size: 14px;
-  margin-top: 8px;
-}
-
-.platform-id {
-  color: #FAF8F5;
-  font-size: 14px;
 }
 
 /* 响应式设计 */

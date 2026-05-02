@@ -27,11 +27,11 @@
       <div class="history-content">
         <div class="vertical-label">历史渊源</div>
         <div class="history-image">
-          <img src="https://picsum.photos/640/320?random=1" alt="历史渊源" />
+          <img :src="homeImages[0]" alt="历史渊源" />
         </div>
         <div class="history-text-block">
           <p class="history-desc">清同治年间，嘉定形成了以徐行镇为中心的黄草编织区，成为本地农民一项主要的家庭手工业。数百年来，黄草……</p>
-          <a href="#" class="learn-more">了解更多 →</a>
+          <a href="/history" class="learn-more">了解更多 →</a>
         </div>
       </div>
     </section>
@@ -40,12 +40,12 @@
     <section class="works-section">
       <div class="works-content">
         <div class="works-image">
-          <img src="https://picsum.photos/640/320?random=2" alt="作品欣赏" />
+          <img :src="homeImages[1]" alt="作品欣赏" />
         </div>
         <div class="vertical-label">作品欣赏</div>
         <div class="works-text-block">
           <p class="works-desc">如今的徐行草编正在开辟全新道路，传统黄草与云南彝绣、皮具、竹子等材料相融合，编织出时尚拎包、草编屏风、灯具等全新款式，碰撞出别……</p>
-          <a href="#" class="learn-more">了解更多 →</a>
+          <a href="/works" class="learn-more">了解更多 →</a>
         </div>
       </div>
     </section>
@@ -59,16 +59,15 @@
           </div>
         </div>
         <div class="video-container">
-          <div class="video-placeholder">
-            <img src="https://picsum.photos/640/320?random=3" alt="视频" />
-            <div class="play-button">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="24" fill="rgba(255,255,255,0.9)"/>
-                <path d="M20 16L32 24L20 32V16Z" fill="#5D4037"/>
-              </svg>
-            </div>
-            <span class="video-duration">0:57</span>
-          </div>
+          <video 
+            class="video-player" 
+            controls 
+            :poster="videoPoster"
+            :src="videoUrl"
+            @loadeddata="captureFirstFrame"
+          >
+            您的浏览器不支持视频播放
+          </video>
         </div>
       </div>
     </section>
@@ -84,35 +83,6 @@
         </div>
       </div>
     </section>
-    
-    <!-- 页脚 -->
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-left">
-          <div class="footer-links">
-            <a href="#">相关链接</a>
-            <span class="divider">|</span>
-            <a href="#">网站地图</a>
-            <span class="divider">|</span>
-            <a href="#">隐私政策</a>
-            <span class="divider">|</span>
-            <a href="#">联系我们</a>
-            <span class="divider">|</span>
-            <a href="#">关于我们</a>
-            <span class="divider">|</span>
-            <a href="#">留言板</a>
-          </div>
-          <p class="contact-info">联系方式：bailey07@yeah.net</p>
-          <p class="browser-hint">建议使用360极速、Chrome、Firefox浏览器，最佳分辨率1920x1080</p>
-        </div>
-        <div class="footer-right">
-          <div class="qr-code">
-            <img src="https://picsum.photos/120/120?random=qr" alt="二维码" />
-          </div>
-          <p class="qr-label">官方微信</p>
-        </div>
-      </div>
-    </footer>
   </div>
 </template>
 
@@ -120,22 +90,39 @@
 import { ref } from 'vue'
 import NavBar from '../components/NavBar.vue'
 
+const videoUrl = new URL('../videos/HomePage_ Document.mp4', import.meta.url).href
+const videoPoster = ref('')
+
+const captureFirstFrame = () => {
+  const video = document.querySelector('.video-container .video-player')
+  if (video && !videoPoster.value) {
+    const canvas = document.createElement('canvas')
+    canvas.width = video.videoWidth || 640
+    canvas.height = video.videoHeight || 320
+    const ctx = canvas.getContext('2d')
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+    videoPoster.value = canvas.toDataURL('image/jpeg')
+  }
+}
+
 const newsList = ref([
-  '传播海派乡村文化，展现乡村振兴新图景，上···',
-  '【乡村文化】嘉定徐行草编亮相“大地流彩”全···',
-  '文明城区 创建为民 | 嘉定：文化“试验田”也···',
-  '嘉定徐行镇为市民呈现“可逛可赏可尝”一站式···',
-  '【艺术改变人生】徐行草编：蒲苇如丝 润化心灵',
-  '非遗在社区！嘉定这些项目、基地成功入选',
-  '亮相市级展会，徐行草编凭实力“圈粉”',
-  '千年技艺时尚逆袭，黄草也能编出“黄金”',
-  '非遗传承人：让徐行草编“新”起来“活”起来'
+  '组名：fi（非遗）梨',
+  '组长：基安',
+  '组员：陈翱齐、林佳欣、李培菁、王雪华',
+  '组员：廖思茗、陈若霖、江宜霖',
+  '导师：朱钟炎',
+  '助教：陈一齐',
 ])
 
 const cards = ref([
-  { title: '传承人风采', image: 'https://picsum.photos/400/240?random=4' },
-  { title: '作品欣赏', image: 'https://picsum.photos/400/240?random=5' },
-  { title: '联系我们', image: 'https://picsum.photos/400/240?random=6' }
+  { title: '传承人风采', image: 'src/imgs/Home/Bottom-1.png' },
+  { title: '作品欣赏', image: 'src/imgs/Home/Bottom-2.png' },
+  { title: '技艺展示', image: 'src/imgs/Home/Bottom-3.png' }
+])
+
+const homeImages = ref([
+  'src/imgs/Home/Home-1.jpg',
+  'src/imgs/Home/Home-2.jpg'
 ])
 </script>
 
@@ -416,40 +403,10 @@ const cards = ref([
   position: relative;
 }
 
-.video-placeholder {
+.video-player {
   width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.video-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.play-button:hover {
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
-.video-duration {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
+  border-radius: 8px;
+  background-color: #000;
 }
 
 /* 底部三列区 */
@@ -503,79 +460,4 @@ const cards = ref([
   padding: 0 16px 16px;
 }
 
-/* 页脚 */
-.footer {
-  height: 160px;
-  background-color: #212121;
-  padding: 24px;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.footer-left {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-links {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.footer-links a {
-  color: #BDBDBD;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #FDF8F0;
-}
-
-.divider {
-  color: #BDBDBD;
-}
-
-.contact-info {
-  color: #BDBDBD;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
-
-.browser-hint {
-  color: #757575;
-  font-size: 12px;
-}
-
-.footer-right {
-  text-align: center;
-}
-
-.qr-code {
-  width: 120px;
-  height: 120px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.qr-code img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.qr-label {
-  color: #BDBDBD;
-  font-size: 14px;
-  margin-top: 8px;
-}
 </style>
