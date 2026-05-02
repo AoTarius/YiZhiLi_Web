@@ -1,9 +1,8 @@
 <script setup>
-import MainPage from './components/MainPage.vue'
 </script>
 
 <template>
-  <MainPage />
+  <router-view />
 </template>
 
 <style>
@@ -14,11 +13,12 @@ import MainPage from './components/MainPage.vue'
 }
 
 body {
-  background-color: #f5f5f0; /* 素雅背景色 */
+  background-color: #FDF8F0;
   min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
 
 #app {
-  background-color: #f5f5f0;
+  background-color: #FDF8F0;
 }
 </style>
