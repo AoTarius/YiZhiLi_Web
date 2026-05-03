@@ -11,7 +11,8 @@
           <p class="hero-desc">寻平和之美 纵横交叠间 于自然之源</p>
         </div>
         <div class="hero-right-text">
-          <p>隐藏着一份绿意盎然的传统之美 每一道经纬交织间</p>
+          <p>隐藏着一份绿意盎然的传统之美</p>
+          <p>每一道经纬交织间</p>
         </div>
       </div>
     </section>
@@ -180,12 +181,12 @@ const homeImages = ref([
 }
 
 .hero-right-text {
-  width: 320px;
-  height: 160px;
+  width: 640px;
+  height: 360px;
   padding: 24px;
-  color: #FDF8F0;
-  font-size: 18px;
-  line-height: 28px;
+  color: #defaef;
+  font-size: 36px;
+  line-height: 56px;
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }

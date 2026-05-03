@@ -25,7 +25,11 @@
           </div>
           <div class="card-content">
             <h3 class="inheritor-name">{{ inheritor.name }}</h3>
-            <button class="detail-button">更多详情 →</button>
+            <button 
+              class="detail-button" 
+              @click="handleDetailClick(inheritor)"
+              :class="{ 'has-link': inheritor.link }"
+            >更多详情 →</button>
           </div>
         </div>
       </div>
@@ -48,13 +52,20 @@ const inheritors = ref([
   },
   {
     name: '王勤',
-    image: 'src/imgs/Inheritors/WangQin.jpg'
+    image: 'src/imgs/Inheritors/WangQin.jpg',
+    link: 'https://baike.baidu.com/item/王勤/55314419'
   },
   {
     name: '陈姣',
     image: 'src/imgs/Inheritors/ChenJiao.jpg'
   }
 ])
+
+const handleDetailClick = (inheritor) => {
+  if (inheritor.link) {
+    window.open(inheritor.link, '_blank', 'noopener noreferrer')
+  }
+}
 </script>
 
 <style scoped>
