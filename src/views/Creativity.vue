@@ -128,6 +128,27 @@
           </div>
         </div>
       </div>
+
+      <!-- 第六行：左文右图 -->
+      <div class="creative-card row-right">
+        <div class="creative-content">
+          <h3 class="creative-title">声纹.上海hua（话/画）</h3>
+          <p class="creative-desc">
+            《声纹·上海话》是一组以徐行草编为载体的声音可视化艺术壁挂。选取典型的沪语对话、上海童谣，通过数字软件将声波波形转化为可视化图谱，再以草编的经纬密度进行“翻译”——高频段采用密实挑压编，中低频段运用镂空透气编，让声波的起伏变化转化为黄草纤维的疏密虚实。
+          </p>
+          <p class="creative-desc">
+            作品将听觉记忆转化为触觉纹理，使沪语的软糯与草编的温润同频共振。观者既能远观声纹的抽象节奏，又能近触编织的肌理起伏，在“看见声音”的同时感受非遗技艺的当代转译。该系列兼具艺术收藏与城市文化叙事价值，是海派声音遗产的非遗物质化表达。
+          </p>
+          <div class="creative-tags">
+            <span class="tag">声音可视化</span>
+            <span class="tag">海派文化</span>
+            <span class="tag">艺术装置</span>
+          </div>
+        </div>
+        <div class="creative-image">
+          <img :src="creativityImages[5]" alt="创意作品6" />
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -142,6 +163,7 @@ const creativityImages = ref([
   'src/imgs/Creativity/Creativity-3.jpg',
   'src/imgs/Creativity/Creativity-4.jpg',
   'src/imgs/Creativity/Creativity-5.jpg',
+  'src/imgs/Creativity/Creativity-6.png',
 ])
 </script>
 
