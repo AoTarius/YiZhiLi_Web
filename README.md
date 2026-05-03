@@ -1,4 +1,5 @@
 # fi梨 - 非遗草编文化传承平台
+![项目截图](imgs/image.png)
 
 ## 项目简介
 
@@ -58,7 +59,6 @@ npm run preview
 ```
 src/
 ├── components/          # 公共组件
-│   ├── MainPage.vue    # 主页面布局
 │   └── NavBar.vue      # 导航栏
 ├── views/              # 页面视图
 │   ├── Home.vue        # 首页
